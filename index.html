@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Frase Motivadora del Día</title>
+<style>
+  body { font-family: Arial, sans-serif; display: flex; height: 100vh;
+         justify-content: center; align-items: center;
+         background: #f0f4f8; text-align: center; padding: 20px; }
+  .frase { font-size: 24px; color: #333; max-width: 600px; }
+</style>
+</head>
+<body>
+  <div class="frase" id="frase">Cargando...</div>
+  <script>
+    const frases = [
+      "Cada día es una nueva oportunidad para empezar de nuevo.",
+      "Cree en ti y todo será posible.",
+      "No importa cuán lento vayas, lo importante es no detenerse.",
+      "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
+      "La actitud lo es todo.",
+      "Hazlo con pasión o no lo hagas.",
+      "Hoy es un buen día para ser feliz.",
+      "No sueñes tu vida, vive tu sueño.",
+      "Tu único límite es tu mente.",
+      "Sé la energía que quieres atraer."
+    ];
+    const hoy = new Date();
+    const idx = hoy.getFullYear() * 1000 + hoy.getMonth() * 100 + hoy.getDate();
+    document.getElementById("frase").textContent = frases[idx % frases.length];
+  </script>
+</body>
+</html>
