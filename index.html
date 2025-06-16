@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>Frase Motivadora del Día</title>
-<style>
-  body { font-family: Arial, sans-serif; display: flex; height: 100vh;
-         justify-content: center; align-items: center;
-         background: #f0f4f8; text-align: center; padding: 20px; }
-  .frase { font-size: 24px; color: #333; max-width: 600px; }
-</style>
+<head>
+  <meta charset="UTF-8">
+  <title>Frase Motivadora del Día</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .frase {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      font-size: 24px;
+      color: #333;
+      max-width: 700px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div class="frase" id="frase">Cargando...</div>
+
   <script>
     const frases = [
       "Cada día es una nueva oportunidad para empezar de nuevo.",
@@ -23,9 +45,26 @@
       "Tu único límite es tu mente.",
       "Sé la energía que quieres atraer."
     ];
+
+    const imagenes = [
+      "https://upload.wikimedia.org/wikipedia/commons/1/1d/Machu_Picchu%2C_Peru.jpg", // Machu Picchu
+      "https://upload.wikimedia.org/wikipedia/commons/6/63/Laguna_69_-_Huascar%C3%A1n_National_Park.jpg", // Laguna 69
+      "https://upload.wikimedia.org/wikipedia/commons/3/36/Paracas_National_Reserve.jpg", // Paracas
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Colca_Canyon_Peru.jpg", // Cañón del Colca
+      "https://upload.wikimedia.org/wikipedia/commons/2/2a/Amazon_rainforest_Iquitos.jpg", // Amazonía (Iquitos)
+      "https://upload.wikimedia.org/wikipedia/commons/e/e2/Lake_Titicaca_and_Isla_del_Sol.jpg", // Lago Titicaca
+      "https://upload.wikimedia.org/wikipedia/commons/2/2a/Vinicunca_Rainbow_Mountain_Peru.jpg", // Montaña de 7 colores
+      "https://upload.wikimedia.org/wikipedia/commons/b/be/Pacasmayo_Peru.jpg", // Costa norte – Pacasmayo
+      "https://upload.wikimedia.org/wikipedia/commons/3/3d/San_Mart%C3%ADn_Peru_Selva.jpg", // Selva – San Martín
+      "https://upload.wikimedia.org/wikipedia/commons/5/5b/Lomas_de_Lachay.jpg" // Lomas de Lachay
+    ];
+
     const hoy = new Date();
     const idx = hoy.getFullYear() * 1000 + hoy.getMonth() * 100 + hoy.getDate();
-    document.getElementById("frase").textContent = frases[idx % frases.length];
+    const i = idx % frases.length;
+
+    document.body.style.backgroundImage = `url('${imagenes[i]}')`;
+    document.getElementById("frase").textContent = frases[i];
   </script>
 </body>
 </html>
