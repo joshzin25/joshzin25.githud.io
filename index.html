@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Frase Motivadora del Día</title>
+  <meta charset="UTF-8" />
+  <title>Tu fortuna del día</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1d/Machu_Picchu%2C_Peru.jpg');
       background-size: cover;
-      background-position: center center;
+      background-position: center;
       background-repeat: no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 40px;
     }
 
     .frase {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.9);
       padding: 40px;
-      font-size: 42px;
+      border-radius: 20px;
+      font-size: 36px;
       color: #222;
-      max-width: 900px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-      line-height: 1.4;
+      max-width: 800px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
@@ -41,23 +38,27 @@
 
   <script>
     const frases = [
-      "Cada día es una nueva oportunidad para empezar de nuevo.",
-      "Cree en ti y todo será posible.",
-      "No importa cuán lento vayas, lo importante es no detenerse.",
-      "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
-      "La actitud lo es todo.",
+      "Una sonrisa puede cambiar tu día.",
+      "La fortuna favorece a los valientes.",
+      "Hoy es un buen día para intentarlo otra vez.",
+      "Cada paso te acerca a tu destino.",
+      "Abre la mente, el corazón y los ojos.",
+      "La felicidad llega en formas simples.",
+      "El universo conspira a tu favor.",
+      "Nunca subestimes el poder de la calma.",
+      "Tu intuición te llevará a un buen lugar.",
+      "Vas en el camino correcto, sigue avanzando.",
+      "Algo inesperado traerá alegría a tu día.",
+      "Tu energía atrae lo que piensas.",
+      "Lo que das, vuelve multiplicado.",
       "Hazlo con pasión o no lo hagas.",
-      "Hoy es un buen día para ser feliz.",
-      "No sueñes tu vida, vive tu sueño.",
-      "Tu único límite es tu mente.",
-      "Sé la energía que quieres atraer."
+      "El momento perfecto es ahora."
     ];
 
     const hoy = new Date();
-    const idx = hoy.getFullYear() * 1000 + hoy.getMonth() * 100 + hoy.getDate();
-    const i = idx % frases.length;
-
-    document.getElementById("frase").textContent = frases[i];
+    const diaDelAno = Math.floor((hoy - new Date(hoy.getFullYear(), 0, 0)) / 86400000);
+    const fraseDelDia = frases[diaDelAno % frases.length];
+    document.getElementById("frase").textContent = fraseDelDia;
   </script>
 </body>
 </html>
